@@ -4,12 +4,12 @@ start of game:
 	get number of players;
 	give each player 7 random cards;
 	put remaining cards in stack;
-	setup playerOrder;
+	setup playerOrder; // current player's score = 0; needs to be defined according to each player, not as a single var
 do
 {
 	for(whoNeedsToPlay = playerCount; whoNeedsToPlay > 0 && whoNeedsToPlay < playerCount + 1; whoNeedsToPlay -= 1)
 	{
-		for(currentCard = 0; amountOfCardsPlayerHas > currentCard; currentCard++)
+		for(currentCard = 0; amountOfCardsPlayerHas > currentCard; currentCard++) 
 		{
 			if(it is of a matching color or number)
 			{
@@ -47,10 +47,14 @@ do
 		}
 		else {
 			player takes card from stack;
-	 		current player's score = 0;
+	 		/* idk what you're doing so imma just rewrite it for you
 			for(int currentPlayer = 0; playerlist.length > currentPlayer; currentPlayer++)
 			{
 	 			current counted player's score += current checked player's score;
 			}
-		}
+			*/
+			// idk what you're doing for playerlist but im going to treat it as an object
+			for(int x=0; x < playerlist.length; x++){
+				playerlist[x].playerScore += howeverMuchYouWantToAdd;
+			}
 }while(no one has a score that is more than or equal tos 500)
