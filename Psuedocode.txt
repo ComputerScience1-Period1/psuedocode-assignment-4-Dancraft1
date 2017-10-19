@@ -9,14 +9,16 @@ do
 {
 	for(whoNeedsToPlay = playerCount; whoNeedsToPlay > 0 && whoNeedsToPlay < playerCount + 1; whoNeedsToPlay -= 1)
 	{
-		foreach(card in player's deck of cards)
+		for(currentCard = 0; amountOfCardsPlayerHas > currentCard; currentCard++)
 		{
 			if(it is of a matching color or number)
+			{
 				card's score++;
 				if(it's a symbol)
 					card's score++;
 					if(it's a wildDrawFour)
-						card's score++
+						card's score++;
+			}
 		}
 		if(they have a card with a score of more than zero)
 		{
@@ -43,13 +45,12 @@ do
 					break;
 			}
 		}
-		else
+		else {
 			player takes card from stack;
-	 ->	current player's score = 0;
-	|	foreach(player in playerList) //i'm lazy and tired don't judge me.
-	|	{
-	 ->		current counted player's score += current checked player's score;
+	 		current player's score = 0;
+			for(int currentPlayer = 0; playerlist.length > currentPlayer; currentPlayer++)
+			{
+	 			current counted player's score += current checked player's score;
+			}
 		}
-		if(current player's score
-	}
 }while(no one has a score that is more than or equal tos 500)
