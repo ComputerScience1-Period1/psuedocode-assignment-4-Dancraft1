@@ -7,9 +7,9 @@ start of game:
 	setup playerOrder;
 do
 {
-	for(whoNeedsToPlay = playerCount; whoNeedsToPlay > 0 && whoNeedsToPlay < playerCount + 1; whoNeedsToPlay -= 1)
+	for(int whoNeedsToPlay = playerCount; whoNeedsToPlay > 0 && whoNeedsToPlay < playerCount + 1; whoNeedsToPlay -= 1)
 	{
-		for(currentCard = 0; amountOfCardsPlayerHas > currentCard; currentCard++)
+		for(int currentCard = 0; currentCard < amoutOfCardsPlayerHas; currentCard++)
 		{
 			if(it is of a matching color or number)
 			{
