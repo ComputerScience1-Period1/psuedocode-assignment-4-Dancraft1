@@ -5,18 +5,34 @@ start of game:
 	give each player 7 random cards;
 	put remaining cards in stack;
 	setup playerOrder;
+variables: //to make your lives easier.
+
+enum cardType {numberCard, Skip, DrawTwo, Reverse, Wild, WildDrawFour}
+class Card
+{
+	cardType type;
+	int value = 0;
+};
+class Player
+{
+	 vector<Card> cardset;
+	 int score;
+};
+Player[] players;
+Card topCard;
+
 do
 {
-	for(whoNeedsToPlay = playerCount; whoNeedsToPlay > 0 && whoNeedsToPlay < playerCount + 1; whoNeedsToPlay -= 1)
+	for(int whoNeedsToPlay = players.length; whoNeedsToPlay > 0 && whoNeedsToPlay < players.length + 1; whoNeedsToPlay -= 1)
 	{
-		for(currentCard = 0; amountOfCardsPlayerHas > currentCard; currentCard++)
+		for(int currentCard = 0; amountOfCardsPlayerHas > currentCard; currentCard++)
 		{
-			if(it is of a matching color or number)
+			if(players[whoNeedsToPlay].cardset[currentCard])
 			{
 				card's score++;
-				if(it's a symbol)
+				if(card.cardType != cardType.numberCard)
 					card's score++;
-					if(it's a wildDrawFour)
+					if(card.cardType == cardType.WildDrawFour)
 						card's score++;
 			}
 		}
@@ -47,7 +63,7 @@ do
 		}
 		else {
 			player takes card from stack;
-			for(int currentPlayer = 0; playerlist.length > currentPlayer; currentPlayer++)
+			for(int currentPlayer = 0; players.length > currentPlayer; currentPlayer++)
 			{
 				currentPlayer.score = 0; // we need to reset the score now for the calculations to work correctly
 	 			foreach(card in player's cards)
@@ -58,6 +74,6 @@ do
 						currentPlayer.score += 20;
 				}
 			}
-			//by this point, every player has a score that was already calculated
+			//by this point, all scores were already calculated
 		}
 }while(no one has a score that is more than or equal to 500)
