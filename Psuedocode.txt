@@ -1,5 +1,4 @@
 pseudo-code for UNO:
-public variable countModifier = 1;
 start of game:
 	get number of players;
 	give each player 7 random cards;
