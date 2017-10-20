@@ -47,10 +47,17 @@ do
 		}
 		else {
 			player takes card from stack;
-	 		current player's score = 0;
 			for(int currentPlayer = 0; playerlist.length > currentPlayer; currentPlayer++)
 			{
-	 			current counted player's score += current checked player's score;
+				currentPlayer.score = 0; // we need to reset the score now for the calculations to work correctly
+	 			foreach(card in player's cards)
+				{
+					if(currentCard is a numbered card)
+						currentPlayer.score += card's value;
+					else
+						currentPlayer.score += 20;
+				}
 			}
+			//by this point, every player has a score that was already calculated
 		}
-}while(no one has a score that is more than or equal tos 500)
+}while(no one has a score that is more than or equal to 500)
